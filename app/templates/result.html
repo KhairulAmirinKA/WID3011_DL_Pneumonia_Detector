@@ -11,32 +11,19 @@
 
     <link rel="stylesheet" href="../static/style.css">
 
-</head> 
+</head>
 <body>
-    
     <h1>Chest X-ray Pneumonia Detection</h1>
 
-    <div class ="uploadContainer">
-        <h2>Upload your files</h2>
+    <!--prediction result-->
+    <div class="resultContainer">
 
-        <p class="uploadInstruction">File should be JPG/PNG/JPEG</p>
+        <img src="../static/backIcon.png" class="backImg" alt="" width="50" height="50" />
 
-        <div id="imageUploadContainer">
+        <img src="../static/peparu.jpeg" alt="" width="377" height="316" />
 
-            <img id="uploadIcon" src="../static/uploadIcon.png" alt="" />
+        <p>Prediction: {{prediction}}</p>
 
-            <p class="uploadInstruction">Max file size 5MB<br>
-                Drag & Drop your image or </p>
-
-                <button id="btnBrowseFile">Browse File</button>
-
-                <input type="file">
-        </div> 
     </div>
-<!--end of upload container-->
-
-
-    
-
 </body>
 </html>

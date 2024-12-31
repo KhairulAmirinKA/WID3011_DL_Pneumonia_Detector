@@ -11,32 +11,20 @@
 
     <link rel="stylesheet" href="../static/style.css">
 
-</head> 
+</head>
 <body>
-    
     <h1>Chest X-ray Pneumonia Detection</h1>
 
-    <div class ="uploadContainer">
-        <h2>Upload your files</h2>
+    <!--uploading confirmation-->
+    <div class="uploadContainer">
+        <img src="../static/peparu.jpeg" alt="" width="377" height="316" />
 
-        <p class="uploadInstruction">File should be JPG/PNG/JPEG</p>
+        <div id="uploadConfirmation">
+            <button class="btnCancel">Cancel</button>
+            <button class="btnUpload">Upload</button>
 
-        <div id="imageUploadContainer">
-
-            <img id="uploadIcon" src="../static/uploadIcon.png" alt="" />
-
-            <p class="uploadInstruction">Max file size 5MB<br>
-                Drag & Drop your image or </p>
-
-                <button id="btnBrowseFile">Browse File</button>
-
-                <input type="file">
-        </div> 
+        </div>
     </div>
-<!--end of upload container-->
-
-
-    
 
 </body>
 </html>

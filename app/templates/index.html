@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/style.css">
+
+</head> 
+<body>
+    
+    <h1>Chest X-ray Pneumonia Detection</h1>
+
+    <div class ="uploadContainer">
+        <h2>Upload your files</h2>
+
+        <p class="uploadInstruction">File should be JPG/PNG/JPEG</p>
+
+        <div id="imageUploadContainer">
+
+            <img id="uploadIcon" src="../static/uploadIcon.png" alt="" />
+
+            <p class="uploadInstruction">Max file size 5MB<br>
+                Drag & Drop your image or </p>
+
+                <button id="btnBrowseFile">Browse File</button>
+
+                <input type="file">
+        </div> 
+    </div>
+<!--end of upload container-->
+
+
+    <!--uploading confirmation-->
+    <div class="uploadContainer">
+        <img src="../static/peparu.jpeg" alt="" width="377px" height="316px" />
+
+        <div id="uploadConfirmation">
+            <!-- <span>Cancel</span>
+            <span>Upload</span> -->
+            <button class="btnCancel">Cancel</button>
+            <button class="btnUpload">Upload</button>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

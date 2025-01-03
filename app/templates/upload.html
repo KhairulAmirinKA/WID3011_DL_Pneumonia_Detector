@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pneumonia Detection</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">    
 
     <link rel="stylesheet" href="../static/style.css">
 
@@ -15,16 +14,26 @@
 <body>
     <h1>Chest X-ray Pneumonia Detection</h1>
 
-    <!--uploading confirmation-->
     <div class="uploadContainer">
-        <img src="../static/peparu.jpeg" alt="" width="377" height="316" />
 
-        <div id="uploadConfirmation">
-            <button class="btnCancel">Cancel</button>
-            <button class="btnUpload">Upload</button>
+      <!-- Display uploaded image -->
+      {% if image_url %}
+      <img src="{{ image_url }}" alt="Uploaded Image" width="377" height="316" />
+      <p class="fileName">{{ file_name }}</p>
+      {% else %}
+      <p>No image uploaded yet.</p>
+      {% endif %}
 
-        </div>
+      <!-- Cancel and Upload buttons -->
+      <div id="uploadConfirmation">
+        <a href="/" class="btnCancel">Cancel</a>
+        <form action="/result" method="post" enctype="multipart/form-data" style="display: inline;">
+            <input type="hidden" name="file_name" value="{{ file_name }}">
+            <button type="submit" class="btnUpload">Upload</button>
+        </form>
     </div>
+
+  </div>
 
 </body>
 </html>

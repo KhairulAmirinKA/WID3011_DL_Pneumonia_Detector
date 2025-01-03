@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pneumonia Detection</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../static/style.css">
 
 </head> 
@@ -28,15 +27,45 @@
             <p class="uploadInstruction">Max file size 5MB<br>
                 Drag & Drop your image or </p>
 
-                <button id="btnBrowseFile">Browse File</button>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" accept="image/*" id="fileInput" required>
+                    <button type="submit", id="btnBrowseFile">Browse File</button>
+                </form>
 
-                <input type="file">
         </div> 
     </div>
 <!--end of upload container-->
 
-
-    
-
 </body>
 </html>
+
+
+<!--
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Chest X-ray Pneumonia Detection</h1>
+
+    <div class="uploadContainer">
+        <h2>Upload your files</h2>
+
+        <p class="uploadInstruction">File should be JPG/PNG/JPEG</p>
+
+        <div id="imageUploadContainer">
+            <img id="uploadIcon" src="{{ url_for('static', filename='uploadIcon.png') }}" alt="">
+
+            <p class="uploadInstruction">Max file size 5MB<br>
+                Drag & Drop your image or </p>
+
+            <button id="btnBrowseFile">Browse File</button>
+            <input type="file" id="fileInput" name="img" style="display: none;"> 
+        </div> 
+    </div>
+
+    <script>
+        document.getElementById('btnBrowseFile').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    </script>
+{% endblock %}
+-->

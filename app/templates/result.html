@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pneumonia Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">    
+
     <link rel="stylesheet" href="../static/style.css">
 
 </head>
@@ -12,25 +16,13 @@
     <h1>Chest X-ray Pneumonia Detection</h1>
 
     <div class="resultContainer">
-        <img src="{{ image_url }}" alt="Uploaded Image" width="377" height="316">
+
+        <a href="/" class="backImgLink">
+            <img src="../static/backIcon.png" class="backImg" alt="Back to Home" width="50" height="50" />
+        </a>
+
+       <img src="{{ image_url }}" alt="Uploaded Image" width="377" height="316">
         <p>Prediction: {{ prediction }}</p>
     </div>
 </body>
 </html>
-
-<!--
-
-{% extends 'base.html' %}
-
-{% block content %}
-    <h1>Chest X-ray Pneumonia Detection</h1>
-
-    <div class="resultContainer">
-        <img src="{{ url_for('static', filename='backIcon.png') }}" class="backImg" alt="" width="50" height="50">
-
-        <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
-
-        <p>Prediction: {{ prediction }}</p>
-    </div>
-{% endblock %}
--->

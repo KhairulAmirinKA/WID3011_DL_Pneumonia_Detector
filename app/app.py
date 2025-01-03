@@ -6,31 +6,32 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'static/uploads'
-MODEL_FOLDER = 'models'
+UPLOAD_FOLDER = 'app/static/uploads' 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 # Load the model
-model = load_model(os.path.join(MODEL_FOLDER, 'model.h5'))
+model = load_model('app/models/best_inception_model.keras')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def predict_pneumonia(img_path):
     # Load the image and preprocess it
-    img = image.load_img(img_path, target_size=(224, 224))  # Adjust size to match your model's input
+    img = image.load_img(img_path, target_size=(299, 299))  # Adjust size to match your model's input
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array / 255.0  # Normalize if your model requires it
 
     # Make prediction
     prediction = model.predict(img_array)
-    if prediction[0][0] > 0.5:
-        return "Pneumonia PNEUMONIA"
+    if prediction[0][0] > 0.3:
+        print(prediction)
+        return "PNEUMONIA" + str(prediction[0,0])
     else:
-        return "NORMAL"
+        return "NORMAL" + str(prediction[0,0])
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -76,7 +77,6 @@ def show_result():
 
 if __name__ == '__main__':
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-    os.makedirs(MODEL_FOLDER, exist_ok=True)
     app.run(debug=True)
 
 

@@ -1,0 +1,7 @@
+# Environments
+.env
+.venv
+env/
+venv/
+/app/static/uploads/
+/app/check dir.py

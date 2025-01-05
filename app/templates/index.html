@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pneumonia Detection</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     
+    <link rel="icon" type="image/x-icon" href="../static/titleIcon.png">
     <link rel="stylesheet" href="../static/style.css">
 
 </head> 
@@ -25,11 +27,19 @@
             <img id="uploadIcon" src="../static/uploadIcon.png" alt="" />
 
             <p class="uploadInstruction">Max file size 5MB<br>
-                Drag & Drop your image or </p>
+                Upload from your device </p>
 
                 <form action="/upload" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file" accept="image/*" id="fileInput" required>
-                    <button type="submit", id="btnBrowseFile">Predict</button>
+
+                    <div class="fileInputContainer">
+                        <input type="file" name="file" accept="image/*" id="fileInput" required />
+                        
+                    </div>
+                    
+                    <div class="nextBtnContainer">
+                        <button type="submit", id="btnBrowseFile">Next</button>
+                    </div>
+                    
                 </form>
 
         </div> 

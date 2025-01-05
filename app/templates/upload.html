@@ -18,7 +18,7 @@
 
       <!-- Display uploaded image -->
       {% if image_url %}
-      <img src="{{ image_url }}" alt="Uploaded Image" width="377" height="316" />
+      <img src="{{ image_url }}" alt="Uploaded Image" width="300" height="300" />
       <p class="fileName">{{ file_name }}</p>
       {% else %}
       <p>No image uploaded yet.</p>
@@ -27,6 +27,7 @@
       <!-- Cancel and Upload buttons -->
       <div id="uploadConfirmation">
         <a href="/" class="btnCancel">Cancel</a>
+        
         <form action="/result" method="post" enctype="multipart/form-data" style="display: inline;">
             <input type="hidden" name="file_name" value="{{ file_name }}">
             <button type="submit" class="btnUpload">Upload</button>

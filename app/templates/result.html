@@ -21,8 +21,15 @@
             <img src="../static/backIcon.png" class="backImg" alt="Back to Home" width="50" height="50" />
         </a>
 
-       <img src="{{ image_url }}" alt="Uploaded Image" width="377" height="316">
-        <p>Prediction: {{ prediction }}</p>
+       <img src="{{ image_url }}" alt="Uploaded Image" width="300" height="300">
+        
+       <div class="outputContainer">
+        <p><strong>Prediction: </strong>{{ prediction.result }}</p>
+        <br>
+
+        <p><strong>Confidence:</strong>{{prediction.confidence}}</p>
+       </div>
+        
     </div>
 </body>
 </html>

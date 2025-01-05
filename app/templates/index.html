@@ -28,8 +28,16 @@
                 Drag & Drop your image or </p>
 
                 <form action="/upload" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file" accept="image/*" id="fileInput" required>
-                    <button type="submit", id="btnBrowseFile">Predict</button>
+
+                    <div class="fileInputContainer">
+                        <input type="file" name="file" accept="image/*" id="fileInput" required />
+                        
+                    </div>
+                    
+                    <div class="nextBtnContainer">
+                        <button type="submit", id="btnBrowseFile">Next</button>
+                    </div>
+                    
                 </form>
 
         </div> 

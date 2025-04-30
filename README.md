@@ -20,6 +20,7 @@ BY: GROUP 7
 # Demonstration
 1. The main page. User can see the Choose File button to upload chest X-ray photo from local device.
    !['main'](demonstration/1.png)
+
 2. User can choose photo from device.
    !['choose'](demonstration/2.png)
    
